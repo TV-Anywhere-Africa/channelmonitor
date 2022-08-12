@@ -160,7 +160,7 @@
 		  .catch(error => console.log('error', error));
 	  }
 
-</script>
+	</script>
 
 
 <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
