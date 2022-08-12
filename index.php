@@ -181,7 +181,7 @@
 
 			for ($i = 0; $i < $limit; $i++){
 
-				if (isset(mysqli_real_escape_string($db, $_POST['uid'.$i])) && isset(mysqli_real_escape_string($db, $_POST['url'.$i]))){
+				if (isset($_POST['uid'.$i]) && isset($_POST['url'.$i])){
 
 					$uid = mysqli_real_escape_string($db, $_POST['uid'.$i]);
 					$url = mysqli_real_escape_string($db, $_POST['url'.$i]);
@@ -190,7 +190,6 @@
 
 				}
 
-				
 			}
 
 			echo "<script>window.location.replace('monitor.php')</script>";			
