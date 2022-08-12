@@ -181,10 +181,16 @@
 
 			for ($i = 0; $i < $limit; $i++){
 
-				$uid = mysqli_real_escape_string($db, $_POST['uid'.$i]);
-				$url = mysqli_real_escape_string($db, $_POST['url'.$i]);
+				if (isset(mysqli_real_escape_string($db, $_POST['uid'.$i])) && isset(mysqli_real_escape_string($db, $_POST['url'.$i]))){
 
-				mysqli_query($db, "insert into channels (UID, Name, Link, Status, Position, Date) values ('$uid', '$uid', '$url', '$user', '$i', '$cdate')");
+					$uid = mysqli_real_escape_string($db, $_POST['uid'.$i]);
+					$url = mysqli_real_escape_string($db, $_POST['url'.$i]);
+
+					mysqli_query($db, "insert into channels (UID, Name, Link, Status, Position, Date) values ('$uid', '$uid', '$url', '$user', '$i', '$cdate')");
+
+				}
+
+				
 			}
 
 			echo "<script>window.location.replace('monitor.php')</script>";			
